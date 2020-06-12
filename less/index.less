@@ -1,0 +1,226 @@
+// 导入变量
+@import "./variable";
+
+/*6点-12点 6 <= x < 12*/
+.morning {
+  background-image: linear-gradient(to bottom, #5476FE, #6FB1FF);
+}
+
+/* 12点-19点 12 <= x < 19 */
+.day {
+  background-image: linear-gradient(to bottom, #FD7537, #FFAB53);
+}
+
+/*19点- 6点 12 <= x < 第二天6点  */
+.night {
+  background-image: linear-gradient(to bottom, #4B36FF, #B560FB);
+}
+
+// 一行文本溢出截断,以省略号方式显示
+.one-text {
+    white-space: nowrap; //一行截断显示
+    overflow: hidden;
+    text-overflow: ellipsis; //溢出时以省略号显示
+}
+
+// 图标公共样式
+.icon-box(@imgName) {
+    width: .24rem;
+    height: .24rem;
+    background: url(@imgName) no-repeat center center;
+    background-size: cover;
+    margin-top: .03rem; //(0.3-0.24)/2
+}
+
+.weather-box {
+    // 自动撑满屏幕的整个宽度、高度
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: @fontColor;
+
+    // .morning;
+
+    .system-nav {
+        position: sticky; //黏贴定位
+        top: 0;
+
+        height: .24rem; //在 iPhone6中,高度为 24px
+        // background-color: #000;
+    }
+
+    .search-box {
+        padding: .1rem;
+        // background-color: #ddd;
+
+        .location {
+            width: 1rem;
+            height: .3rem;
+            // background-color: #aaa;
+        }
+
+        .search {
+            width: calc(~"100% - 1.5rem");
+            height: .3rem;
+            margin-left: .2rem;
+            padding: 0 .15rem;
+            // background-color: #000;
+            border-radius: .15rem; //0.3/2
+            background-image: linear-gradient(to right, rgba(255, 255, 255, .25), rgba(255, 255, 255, .65));
+        }
+
+        .location-text {
+            font-size: .16rem;
+            line-height: .3rem;
+            width: .76rem;
+
+            .one-text;
+        }
+
+        .location-icon {
+            .icon-box("@{url}/location.png");
+        }
+
+        .search-icon {
+            .icon-box("@{url}/search.png");
+        }
+
+        .search-ipt {
+            width: calc(~"100% - .24rem");
+            height: .3rem;
+            color: @fontColor;
+            // background-color: #ddd;
+        }
+    }
+
+    .weatherInfo-box {
+        margin-top: .5rem;
+        font-size: .14rem;
+
+        .now-weather {
+            // width: 1.4rem;
+            // height: 1rem;
+            // background-color: #000;
+            // margin: 0 auto;
+            text-align: center;
+        }
+
+        .now {
+            font-size: .48rem;
+        }
+
+        .now-desc {
+            font-size: .14rem;
+
+            .now-status {
+                margin-right: .1rem;
+            }
+        }
+
+        .weather-desc {
+            padding: 0 .5rem;
+            // height: 1rem;
+            // background-color: #000;
+            margin-top: .3rem;
+
+            .weatherDesc-item {
+                width: 33.3333%;
+                // background-color: #ccc;
+                text-align: center;
+                position: relative;
+            }
+
+            .line {
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                height: .24rem;
+                width: .01rem;
+                background-color: #fff;
+            }
+
+            .weather-preview {
+                margin-top: .2rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .day-hour-box {
+        // background-color: #000;
+        margin-top: .3rem;
+        // height: 2rem;
+
+        .day-hour-title {
+            width: 1.68rem;
+            // height: .8rem; //高度是测试用的
+            // background-color: #ccc;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: .08rem;
+        }
+
+        .title-item {
+            &:first-child {
+                margin-right: .4rem;
+            }
+
+            width: .64rem;
+            text-align: center;
+            font-size: .14rem;
+        }
+        .move-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: .44rem;
+            margin-left: .1rem;
+            height: .12em;
+            background-color: #fff;
+        }
+
+        .weather-content {
+            margin-top: .4rem;
+            padding: 0 .15rem;
+            // height: 1.6rem;
+            overflow-x: auto;
+            // width: 5.6rem; //有 7个
+            // background-color: #ccc;
+        }
+
+        // .weather-list{
+        //     // width: 6.4rem;
+        // }
+    
+        .weather-item,
+        .weather-temp {
+            width: .8rem;
+            // height: 1.6rem;
+            text-align: center;
+        }
+
+        .weather-item {
+            margin-left: .12rem;
+        }
+
+        .weather-item:first-of-type {
+            margin-left: 0;
+        }
+
+        .weather-date {
+            text-align: center;
+            font-size: .14rem;
+        }
+
+        .weather-icon {
+            width: .2rem;
+            height: .2rem;
+            // background-color: #ccc;
+            margin: .15rem auto;
+        }
+    }
+}

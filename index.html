@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾讯天气</title>
+    <link rel="stylesheet" href="./css/index.min.css">
+    <link rel="stylesheet" href="./css/reset.min.css">
+</head>
+
+<body>
+    <div class="weather-box">
+        <!-- 系统导航 -->
+        <div class="system-nav"></div>
+
+        <!-- 搜索 -->
+        <div class="search-box clearfix">
+            <div class="fl location">
+                <div class="fl location-text"></div>
+                <div class="fl location-icon"></div>
+            </div>
+            <div class="fr search">
+                <input class="search-ipt fl" type="text">
+                <span class="search-icon fl"></span>
+            </div>
+        </div>
+
+        <!-- 天气信息 -->
+        <div class="weatherInfo-box">
+            <!-- 实况天气 -->
+            <div class="now-weather">
+                <div class="now">
+                    <span class="Heweather_now" id="tmp"></span>°
+                </div>
+                <div class="now-desc">
+                    <span class="now-status Heweather_now" id="cond_txt"></span>
+                    <!-- <span class="Heweather_df" id="tmp_min"></span>°~<span class="Heweather_df" id="tmp_max"></span>° -->
+                    <span id="tmp-range">暂无天气数据</span>
+                </div>
+            </div>
+
+            <!-- 风向 - 可见度 - 湿度 -->
+            <div class="weather-desc">
+                <div class="clearfix">
+                    <div class="fl weatherDesc-item">
+                        <div class="Heweather_now" id="wind_sc"></div>
+                        <div class="Heweather_now" id="wind_dir"></div>
+                        <i class="line"></i>
+                    </div>
+                    <div class="fl weatherDesc-item">
+                        <div class="Heweather_now" id="vis"></div>
+                        <div>可见度</div>
+                        <i class="line"></i>
+                    </div>
+                    <div class="fl weatherDesc-item">
+                        <div class="Heweather_now" id="hum"></div>
+                        <div>相对湿度</div>
+                    </div>
+                </div>
+                <div class="weather-preview">未来两小时无降水</div>
+            </div>
+
+            <!-- 每日天气预报 - 每小时天气预报 -->
+            <div class="day-hour-box">
+                <div class="day-hour-title clearfix">
+                    <div class="fl title-item" data-type="daily_forecast">
+                        <span>逐日预报</span>
+                    </div>
+                    <div class="fl title-item" data-type="hourly">
+                        <span>逐时预报</span>
+                    </div>
+                    <!-- 下划线 -->
+                    <i class="move-line"></i>
+                </div>
+
+                <div class="clearfix weather-content">
+
+                    <!-- 预报 -->
+                    <div class="clearfix weather-list">
+                        <!-- <div class="fl weather-item">
+                            <div class="weather-date">
+                                <div>06-09</div>
+                                <div>晴</div>
+                            </div>
+                            <div class="weather-icon"></div>
+                            <div class="weather-temp">24°~30°</div>
+                        </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/rem.js"></script>
+<script src="./js/jquery-3.5.1.min.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
